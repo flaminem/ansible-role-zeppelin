@@ -1,0 +1,24 @@
+---
+- name: download packaged zeppelin 
+  get_url: url={{zeppelin_package_mirror}}/incubator/zeppelin/{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
+           dest=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tgz
+  environment:
+    http_proxy: "{{http_proxy}}"
+
+- name: extract from archive to tmp
+  unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tgz
+             dest=/tmp
+             copy=no
+             creates="{{zeppelin_install_dir}}"
+
+- name: Move extracted archive to install directory
+  command: creates="{{zeppelin_install_dir}}" mv /tmp/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_install_dir}}
+    
+- name: ensure zeppelin install directory has correct owner and rights 
+  file: path={{zeppelin_install_dir}}
+        state=directory 
+        mode=0755
+        owner={{zeppelin_user}}
+        group={{zeppelin_user}}
+        recurse=yes
+

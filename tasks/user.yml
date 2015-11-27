@@ -1,0 +1,5 @@
+- name: ensure zeppelin group exists
+  group: name=zeppelin state=present
+
+- name: ensure zeppelin user exists
+  user: name=zeppelin group=zeppelin state=present 

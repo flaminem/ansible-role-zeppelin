@@ -1,0 +1,7 @@
+- name: configure zeppelin
+  template: src={{item}}.j2 dest={{zeppelin_install_dir}}/conf/{{item}} owner={{zeppelin_user}}
+  with_items:
+     - zeppelin-site.xml
+     - zeppelin-env.sh
+  tags: ["configuration","zeppelin"]
+
