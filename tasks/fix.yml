@@ -1,0 +1,5 @@
+- name: configure zeppelin
+  when: zeppelin_version | version_compare('0.5.6-incubating', '=')
+  lineinfile: dest={{zeppelin_install_dir}}/bin/interpreter.sh 
+    line='addJarInDir "${ZEPPELIN_HOME}/lib"' insertbefore='# construct classpath' backup=yes
+

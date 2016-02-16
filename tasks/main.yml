@@ -3,3 +3,4 @@
 - include: user.yml tags=user,zeppelin
 - include: install.yml tags=install,zeppelin
 - include: configure.yml tags=config,zeppelin
+- include: fix.yml tags=fix,zeppelin
