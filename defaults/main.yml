@@ -10,6 +10,10 @@ zeppelin_notebook_dir: notebook
 zeppelin_log_dir: logs
 zeppelin_java_home: '/usr/java/default'
 
+# List of jars that should be symlinked into the zeppelin's lib folder
+# Should contain 2 attributes: path (fully qualified path) and name (of the link)
+zeppelin_jars: []
+
 # You should configure the following parameters
 #zeppelin_java_home: '/usr/java/default'
 #zeppelin_log_dir: '/var/log/zeppelin'

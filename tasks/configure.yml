@@ -3,5 +3,8 @@
   with_items:
      - zeppelin-site.xml
      - zeppelin-env.sh
-  tags: ["configuration","zeppelin"]
+
+- name: add jar dependency links
+  file: src="{{item.path}}" dest={{zeppelin_install_dir}}/lib/{{item.name}} owner={{zeppelin_user}} state=link
+  with_items: zeppelin_jars
 
