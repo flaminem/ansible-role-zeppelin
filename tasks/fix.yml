@@ -7,8 +7,8 @@
 - name: fix missing dependencies in interpreter classpath
   when: zeppelin_version | version_compare('0.5.6-incubating', '=')
   lineinfile: dest={{zeppelin_install_dir}}/bin/interpreter.sh 
-    regexp='ZEPPELIN_CLASSPATH=${SPARK_APP_JAR}'
-    line='ZEPPELIN_CLASSPATH+=${SPARK_APP_JAR}' 
+    regexp='    ZEPPELIN_CLASSPATH+?=[$]{SPARK_APP_JAR}'
+    line='    ZEPPELIN_CLASSPATH+=${SPARK_APP_JAR}' 
     backup=yes
 
 
