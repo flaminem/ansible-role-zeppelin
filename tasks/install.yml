@@ -1,6 +1,6 @@
 ---
 - name: download packaged zeppelin 
-  get_url: url={{zeppelin_package_mirror}}/incubator/zeppelin/{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
+  get_url: url={{zeppelin_package_mirror}}/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
            dest=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tgz
   environment:
     http_proxy: "{{http_proxy}}"
