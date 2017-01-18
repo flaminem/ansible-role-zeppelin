@@ -14,6 +14,8 @@ zeppelin_java_home: '/usr/java/default'
 # Should contain 2 attributes: path (fully qualified path) and name (of the link)
 zeppelin_jars: []
 
+zeppelin_uninstall: false
+
 # You should configure the following parameters
 #zeppelin_java_home: '/usr/java/default'
 #zeppelin_log_dir: '/var/log/zeppelin'

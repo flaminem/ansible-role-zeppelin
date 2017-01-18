@@ -1,0 +1,4 @@
+- name: ensure zeppelin install directory is absent {{zeppelin_install_dir}}
+  file: path={{zeppelin_install_dir}}
+        state=absent
+

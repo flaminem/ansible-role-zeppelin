@@ -3,8 +3,16 @@
 - include: user.yml 
   tags: user,zeppelin
 - include: install.yml 
+  when: not zeppelin_uninstall
   tags: install,zeppelin
 - include: configure.yml 
+  when: not zeppelin_uninstall
   tags: config,zeppelin
 - include: fix.yml 
+  when: not zeppelin_uninstall
   tags: fix,zeppelin
+
+- include: uninstall.yml
+  when: zeppelin_uninstall
+  tags: uninstall,zeppelin
+
